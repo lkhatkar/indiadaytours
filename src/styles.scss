@@ -253,6 +253,15 @@ p, dt, dd, dl, address, label, small, pre, code{
     margin: 18px 0px 0px 0px;
 }
 
+.decorator{
+    margin-top: 5px;
+    width: 108px;
+    line, polyline,
+    path{
+        stroke:#ffc247 !important; stroke-width:1pt;
+    }
+}
+
 .btn-lg{
     display: block;
     text-align: center;
@@ -304,6 +313,13 @@ p, dt, dd, dl, address, label, small, pre, code{
 .card{
     width:15em;
     gap:1em;
+    img{
+        overflow: hidden;
+        transition: 0.5s all ease-in-out;
+        &:hover{
+            transform: scale(1.05);
+        }
+    }
     a{
         text-decoration: none;
         color: $c-menu;
@@ -360,7 +376,8 @@ p, dt, dd, dl, address, label, small, pre, code{
     & .col{
         display: flex;
         justify-content: center;
-        // align-items: center;
+        align-items: center;
+        
         flex-direction: column;
         gap: $gap;
         padding: $padding;
@@ -389,7 +406,7 @@ p, dt, dd, dl, address, label, small, pre, code{
     & .col{
         display: flex;
         justify-content: center;
-        // align-items: center;
+        align-items: center;
         flex-direction: column;
         gap: $gap;
         padding: $padding;
@@ -427,5 +444,81 @@ p, dt, dd, dl, address, label, small, pre, code{
     }
     
 }
+#section6{
+    background-image: url("assets/image/20201230_110300.jpg");
+    background-size: cover;
+    padding: 5em;
+    h1, h2, h3, h4, h5, h6 {
+        letter-spacing: 0em;
+        font-weight: 700;
+        font-family: Inter, Inter;
+    }
+    .col{
+        align-items: center;
+    }
+    .box1{
+        padding: 2em;
+        background-color: $c4-bg;
+        text-align: center;
+        color: $c-text;
+    }
+}
+.content{
+    ul{
+        padding: 1em 2em;
+    }
+    h1,h2,h3,h4,h5,h6{
+        margin-top: 1em;
+    }
+    .page-header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $c-footer;
+        color: $c-text;
+        padding: 3em 13em;
+        margin: 5em 0em;
+        h1{
+            margin: 0;
+            font-size: 3em;
+            font-weight: 900;
+        }
+    }
+    
+}
 
+#tour-guide{
+    a{
+        text-decoration: none;
+        &:hover{
+            color: $c1-accent;
+        }
+    }
+    .bg{
+        background-image: url("assets/image/20201230_100554.jpg");
+        background-size: cover;
+    }
+    .row{
+        justify-content: space-evenly;
+        padding: 2em;
+    }
+}
+
+#private-driver{
+    a{
+        text-decoration: none;
+        &:hover{
+            color: $c1-accent;
+        }
+    }
+    .bg{
+        background-image: url("assets/image/20201230_100554.jpg");
+        background-size: cover;
+    }
+    .row{
+        justify-content: space-evenly;
+        padding: 2em;
+    }
+}
 
