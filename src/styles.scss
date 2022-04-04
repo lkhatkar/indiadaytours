@@ -7,6 +7,7 @@ $c-accent: #eb2380;
 $c-menu: #303133;
 $c-footer: #101213;
 $c-text: #eaeaea;
+$c-card-text: #777777;
 
 $c1-accent: #ffc247;
 $c1-bg: #c9186b;
@@ -60,6 +61,18 @@ $bp : (
     }
 }
 
+.logo{
+    height: 200px;
+    width: 200px;
+    &>img{
+        height: 100%;
+        width: 100%;
+    }
+    @include query(mobile){
+        height: 100px;
+        width: 100px;
+    }
+}
 
 .container {
     display: flex;
@@ -159,6 +172,25 @@ $bp : (
     section img{
         height: 100%;
         width: 100%;
+    }
+
+    footer{
+        & p{
+            font-size: 0.75em !important;
+        }
+        background-color: $c-footer;
+        color: $c-text;
+        a{
+            text-decoration: none;
+            color: $c-text;
+            padding: 0.5em;
+            &:hover{
+                color: $c2-accent;
+            }
+        }
+        .col{
+            padding: 2em;
+        }
     }
 }
 
@@ -269,6 +301,29 @@ p, dt, dd, dl, address, label, small, pre, code{
     }
 }
 
+.card{
+    width:15em;
+    gap:1em;
+    a{
+        text-decoration: none;
+        color: $c-menu;
+        &:hover{
+            color: darken($c1-accent, 15%);
+        }
+    }
+    h1,h2,h3,h4,h5,h6{
+        font-family: arpona,serif !important;
+        font-weight: 700;
+        font-size: 1.5em;
+    }
+    .body{
+        p{
+            color: $c-card-text;
+            font-size: 10px;
+        }
+    }
+}
+
 #section2{
     display: flex;
     background-color: $c1-bg;
@@ -353,6 +408,24 @@ p, dt, dd, dl, address, label, small, pre, code{
     & h2.heading{
         color: $c-text;
     }
+}
+#section5{
+    padding: 5em;
+    h1, h2, h3, h4, h5, h6 {
+        letter-spacing: 0em;
+        font-weight: 700;
+        font-family: Inter, Inter;
+    }
+    .row{
+        margin-top: 2em;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-self: center;
+        text-align: center;
+        font-weight: 700;
+
+    }
+    
 }
 
 
