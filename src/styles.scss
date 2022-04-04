@@ -1,1 +1,358 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("~normalize.css");
+
+$c-light: #fff;
+$c-dark: #303133;
+$c-accent: #eb2380;
+$c-menu: #303133;
+$c-footer: #101213;
+$c-text: #eaeaea;
+
+$c1-accent: #ffc247;
+$c1-bg: #c9186b;
+
+$c2-accent: #ffc247;
+$c2-bg: #f37021;
+
+$c3-accent: #d4b99a;
+$c3-bg: #303133;
+
+$c4-accent: #d4b99a ;
+$c4-bg: #007fee;
+
+$b: 1px dashed grey;
+
+/////// def
+$gap : 0vh;
+$padding : 0vh;
+$color : #48CAE4;
+
+$bp : (
+  mobile : 576px,
+  tablet : 992px,
+  desktop : 1440px,
+);
+
+@mixin query($display){
+    @each $key, $value in $bp{
+      
+      //  defining max-width
+      @if ($display == $key){
+        @media (max-width: $value){@content;}
+      }
+    }
+}
+
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+    line-height: 1.5em;
+    
+  // Changing the body here
+  
+    body{
+      width: 100%;
+      min-height: 100vh;
+      font-size: 16px;
+      font-weight: 300;
+      font-family: Inter, Inter;
+    }
+}
+
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: $gap;
+    padding: $padding;
+
+    @include query(mobile){
+        flex-direction: column;
+    }
+}
+
+[class ^="block-"]{
+
+//To put the left, right text at center
+    display: flex;
+    flex-direction: column;
+
+    border : 1px solid $color;
+//Setting height of each block
+    height: 100vh -$padding*2;
+
+// Style Rules for Mobile Display
+    @include query(mobile){
+        height: 50vh -$padding*2;
+    }
+}
+
+// Style Rules Left Block
+
+.block-1{
+//will occupy 20% of the Available width
+    min-width: 19.5vw;
+    justify-content: top;
+    align-items: center;
+    text-align: center;
+    flex-grow: 2;
+    color: $c-menu;
+    font-size: 12px;
+    a{
+        color: $c-menu;
+    }
+
+    header{
+        flex-grow: 2;
+        a,h1{
+            line-height: 1em !important;
+            text-decoration: none;
+        }
+    }
+    nav{
+        flex-grow: 7;
+        font-weight: 600;
+        li{
+            padding: 0.25em;
+            a:hover{
+                color: lighten($c-menu, 50%);;
+            }
+        }
+    }
+    footer{
+        flex-grow: 1;
+        a{
+            margin: 0.4em;
+
+            svg{
+                
+                height: 1.4em;
+                width: 1.4em;
+            }
+        }
+        a:hover{
+            color: lighten($c-menu, 50%);;
+        }
+    }
+
+    @include query(mobile){
+        nav,footer{
+            display: none;
+        }
+    }
+}
+
+// Style Rules Right Block
+
+.block-2{
+//will occupy 80% of the Available width
+    flex-grow: 8;
+    overflow-y: auto;
+    @include query((mobile)){
+        height: auto ;
+    }
+    // .content, 
+    section{
+        min-height: 100vh;
+    }
+    section img{
+        height: 100%;
+        width: 100%;
+    }
+}
+
+
+/////////////menu/////////////
+nav>ul{
+    list-style: none;
+    a{
+        text-decoration: none;
+    }
+}
+
+.p2{
+    padding: 2%;
+}
+
+.title{
+    font-family: arpona,serif ;
+    font-weight: 400;
+    font-size: 1.5em;
+    .accent{
+        color: $c-accent;
+    }
+}
+
+.box, .row{
+    display: flex;
+}
+.box{
+    flex-direction: column;
+}
+.row{
+    flex-direction: row;
+    gap: 2em;
+}
+
+.col {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+}
+.col-1{flex-grow: 1;}
+.col-2{flex-grow: 2;}
+.col-3{flex-grow: 3;}
+.col-4{flex-grow: 4;}
+.col-5{flex-grow: 5;}
+.col-6{flex-grow: 6;}
+.col-7{flex-grow: 7;}
+.col-8{flex-grow: 8;}
+.col-9{flex-grow: 9;}
+.col-10{flex-grow: 10;}
+
+h1,h2,h3,h4,h5,h6{
+    letter-spacing: 0.00em;
+    font-weight: 400;
+    font-family: Inter, Inter;
+}
+p, dt, dd, dl, address, label, small, pre, code{
+    line-height: 1.75;
+    margin: 18px 0px 0px 0px;
+}
+
+.btn-lg{
+    display: block;
+    text-align: center;
+    font-size: 15px ;
+    padding: 15px 24px ;
+    font-weight: 700;
+}
+.btn-outline{
+    background-color: transparent;
+    border-width: 2px;
+    border-style: solid;
+    // border: 2px solid $c-accent;
+    // color: $c-accent;
+    border-radius: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    // &:hover{
+    //     background-color: $c-accent;
+    //     color: $c1-accent;
+    // }
+}
+.btn-magenta{
+    color: $c-accent;
+    border-color: $c-accent;
+    &:hover{
+        background-color: $c-accent;
+        color: $c1-accent;
+    }
+}
+.btn-yellow{
+    color: $c2-accent;
+    border-color: $c2-accent;
+
+    &:hover{
+        background-color: $c2-accent;
+        color: $c2-bg;
+    }
+}
+.btn-gold{
+    color: $c3-accent;
+    border-color: $c3-accent;
+
+    &:hover{
+        background-color: $c3-accent;
+        color: $c-text;
+    }
+}
+
+#section2{
+    display: flex;
+    background-color: $c1-bg;
+    color:$c-text;
+
+    & .col{
+        display: flex;
+        justify-content: center;
+        // align-items: center;
+        flex-direction: column;
+        gap: $gap;
+        padding: $padding;
+    
+        &:first-child{
+            align-items: center;
+        }
+    }
+    & .p-gold p{
+        color: $c1-accent;
+    }
+    & h1,& h2,& h3,& h4,& h5,& h6{
+        color: $c1-accent;
+        text-transform: uppercase;
+    }
+    & h2.heading{
+        color: $c-text;
+    }
+}
+#section3{
+    display: flex;
+    background-color: $c2-bg;
+    color:$c-text;
+
+    & .col{
+        display: flex;
+        justify-content: center;
+        // align-items: center;
+        flex-direction: column;
+        gap: $gap;
+        padding: $padding;
+    
+        &:first-child{
+            align-items: center;
+        }
+    }
+    & .p-gold p{
+        color: $c2-accent;
+    }
+    & h1,& h2,& h3,& h4,& h5,& h6{
+        color: $c2-accent;
+        text-transform: uppercase;
+    }
+    & h2.heading{
+        color: $c-text;
+    }
+}
+
+#section4{
+    display: flex;
+    background-color: $c3-bg;
+    color:$c-text;
+
+    & .col{
+        display: flex;
+        justify-content: center;
+        // align-items: center;
+        flex-direction: column;
+        gap: $gap;
+        padding: $padding;
+    
+        &:first-child{
+            align-items: center;
+        }
+    }
+    & .p-gold p{
+        color: $c2-accent;
+    }
+    & h1,& h2,& h3,& h4,& h5,& h6{
+        color: $c3-accent;
+        text-transform: uppercase;
+    }
+    & h2.heading{
+        color: $c-text;
+    }
+}
+
+
