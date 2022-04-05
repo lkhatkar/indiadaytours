@@ -1,0 +1,49 @@
+<section id="contact">
+    <div class="row">
+        <div class="col col-3">
+            <p>India Day Tours Pvt Ltd</p>
+                <p><strong>Head Office</strong><br>
+                <!-- 2/33, 4th Floor DDA Flat Madangir<br> -->
+                New Delhi-11007<br>
+                India</p>
+                <!-- <p>Phone<br>
+                +91 9818 975 829<br>
+                +91 7982 010 520</p> -->
+        </div>
+        <div class="col col-7">
+            
+            
+
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+                <h3>Enquiry Form</h3>
+            
+                <div *ngIf="contactForm.errors && (contactForm.touched || contactForm.dirty)" class="alert alert-danger">
+                    Form not valid!. Please fill correct details.
+                </div>
+
+                <label for="first-name">First Name<span class="red">*</span>: </label>
+                <input id="first-name" type="text" formControlName="firstName" required>
+              
+                <label for="last-name">Last Name<span class="red">*</span>: </label>
+                <input id="last-name" type="text" formControlName="lastName" required>
+                
+                <label for="email">Email<span class="red">*</span>: </label>
+                <input id="email" type="text" formControlName="email" required>
+                
+                <label for="country">Country<span class="red">*</span>: </label>
+                <input id="country" type="text" formControlName="country" required>
+                
+                <label for="enquiry">Enquiry<span class="red">*</span>: </label>
+                <textarea rows="4" cols="80" id="enquiry" type="text" formControlName="enquiry" required></textarea>
+
+                <label for="submit"></label>
+                <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+              
+              </form>
+
+              <!-- <div *ngIf="submitted" class="alert">Enquiry sent successfully. Thank you.</div> -->
+              <div *ngIf="submitted" class="alert">Failed to sent enquiry. Please call us. Thank you.</div>
+        </div>
+    </div>
+</section>

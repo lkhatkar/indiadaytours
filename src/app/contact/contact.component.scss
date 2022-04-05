@@ -1,0 +1,32 @@
+.ng-valid[required], .ng-valid.required  {
+    border: 1px solid #42A948; /* green */
+    border-radius: 2px;
+  }
+
+  .red{
+      color:#820000
+  }
+  
+  .ng-touched.ng-invalid:not(form)  {
+    border: 1px solid #a94442; /* red */
+    border-radius: 2px;
+}
+
+  .alert div, .alert {
+    background-color: #fed3d3;
+    color: #820000;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: .5rem;
+  }
+  input,textarea,button{
+      padding: 0.5em;
+  }

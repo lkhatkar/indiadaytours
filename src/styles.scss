@@ -521,4 +521,58 @@ p, dt, dd, dl, address, label, small, pre, code{
         padding: 2em;
     }
 }
+#terms{
+    a{
+        text-decoration: none;
+        &:hover{
+            color: $c1-accent;
+        }
+    }
+    ul{
+        list-style: none;
+    }
+    .bg{
+        background-image: url("assets/image/20201230_100554.jpg");
+        background-size: cover;
+    }
+    .row{
+        justify-content: space-evenly;
+        padding: 2em;
+    }
+}
+
+#contact{
+    background-color: $c3-accent;
+    padding: 3em 1em;
+    .row{
+        justify-content: center;
+        align-items: center;
+        padding: 2em;
+        background-color: $c-light;
+
+    }
+    form{
+        background-color: $c-text;
+        padding: 2em;
+    }
+}
+#accommodation{
+    a{
+        text-decoration: none;
+        &:hover{
+            color: $c1-accent;
+        }
+    }
+    ul{
+        list-style: none;
+    }
+    .bg{
+        background-image: url("assets/image/20201230_100554.jpg");
+        background-size: cover;
+    }
+    .row{
+        justify-content: space-evenly;
+        padding: 2em;
+    }
+}
 
