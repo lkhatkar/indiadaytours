@@ -128,7 +128,7 @@ $bp : (
         font-weight: 600;
         li{
             padding: 0.25em;
-            a:hover{
+            a:hover,a.active{
                 color: lighten($c-menu, 50%);;
             }
         }
